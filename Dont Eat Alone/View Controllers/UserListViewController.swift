@@ -1,17 +1,34 @@
 //
-//  UserMatchViewController.swift
+//  UserListViewController.swift
 //  Dont Eat Alone
 //
-//  Created by Samuel J. Lee on 4/8/18.
+//  Created by Samuel J. Lee on 4/9/18.
 //  Copyright © 2018 Dont Eat Alone. All rights reserved.
 //
 
 import UIKit
 
-class UserMatchViewController: UIViewController {
+class UserListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var userList = ["testData"]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return userList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        cell.textLabel?.text = userList[indexPath.row]
+        return cell
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
