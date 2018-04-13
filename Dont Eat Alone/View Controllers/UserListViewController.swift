@@ -12,16 +12,21 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    var userList = ["testData"]
+    
+    var userList = [User]()
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = userList[indexPath.row]
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCell
+        cell.image_cell = userList[indexPath.row].profilepic
+        
+        cell.descrip_cell = userList[indexPath.row].description
+        cell.name_cell = userList[indexPath.row].name
+        
         return cell
     }
     
@@ -29,6 +34,10 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        userList = [User.init(username: "Samuel", userdescription: "I love being clean", userpic: #imageLiteral(resourceName: "Sam")), User.init(username: "Doggo", userdescription: "I love living life on the edge", userpic: #imageLiteral(resourceName: "Doggo"))]
+        
+        self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
+        self.tableView.rowHeight = 100
 
         // Do any additional setup after loading the view.
     }

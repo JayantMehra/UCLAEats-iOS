@@ -35,6 +35,7 @@
 		BDDE7C6E207AF6840008A677 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE7C6D207AF6840008A677 /* LoginViewController.swift */; };
 		BDDE7CAA207C0F0D0008A677 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE7CA9207C0F0D0008A677 /* UserListViewController.swift */; };
 		BDDE7CAC207C14960008A677 /* UserClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE7CAB207C14960008A677 /* UserClass.swift */; };
+		BDDE7CAE207F33D00008A677 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE7CAD207F33D00008A677 /* CustomCell.swift */; };
 		C0AD0D34204B4EA9008E1206 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AD0D33204B4EA9008E1206 /* TopBar.swift */; };
 		C0CD676A203C15CC006B265D /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD6769203C15CC006B265D /* TimeView.swift */; };
 		C0CD676C203C1B19006B265D /* ColoredBezel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD676B203C1B19006B265D /* ColoredBezel.swift */; };
@@ -98,6 +99,7 @@
 		BDDE7C6D207AF6840008A677 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BDDE7CA9207C0F0D0008A677 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		BDDE7CAB207C14960008A677 /* UserClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserClass.swift; sourceTree = "<group>"; };
+		BDDE7CAD207F33D00008A677 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C0AD0D33204B4EA9008E1206 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		C0CD6769203C15CC006B265D /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		C0CD676B203C1B19006B265D /* ColoredBezel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredBezel.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				770251C1201D4079002E4515 /* Info.plist */,
 				2A94477C2055F5860033B6C6 /* Supporting Files */,
 				BDDE7CAB207C14960008A677 /* UserClass.swift */,
+				BDDE7CAD207F33D00008A677 /* CustomCell.swift */,
 			);
 			path = "Dont Eat Alone";
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				770251B6201D4079002E4515 /* MenuVC.swift in Sources */,
 				770251E4201D4182002E4515 /* Moya_Service.swift in Sources */,
 				2AB62E6E2048D16B0013CB59 /* API.swift in Sources */,
+				BDDE7CAE207F33D00008A677 /* CustomCell.swift in Sources */,
 				2A744895203BBDBC00793AD3 /* MenuCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
