@@ -34,7 +34,7 @@ class UserListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        userList = [User.init(username: "Samuel", userdescription: "I love being clean", userpic: #imageLiteral(resourceName: "Sam")), User.init(username: "Doggo", userdescription: "I love living life on the edge", userpic: #imageLiteral(resourceName: "Doggo"))]
+        userList = [User.init(username: "Samuel", useremail: "heysamlee@gmail.com", useryear: "Freshman", usermajor: "Computer Science", userdescription: "I love being clean.", userpic: #imageLiteral(resourceName: "Sam"), userdiet: "N/A")]
         
         self.tableView.register(CustomCell.self, forCellReuseIdentifier: "custom")
         self.tableView.rowHeight = 100
