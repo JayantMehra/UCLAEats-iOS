@@ -228,14 +228,29 @@
                                 </constraints>
                                 <state key="normal" image="matchbutton"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9s-Jo-Aob">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick a date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u9s-Jo-Aob">
                                 <rect key="frame" x="86" y="222" width="203" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rJ6-bQ-ZyV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick a dining hall" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rJ6-bQ-ZyV">
                                 <rect key="frame" x="86" y="304" width="203" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dL-T7-hp7">
+                                <rect key="frame" x="86" y="353" width="105" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="2P0-5T-awr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select meal period" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MdH-xh-hEy">
+                                <rect key="frame" x="86" y="390" width="203" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -245,16 +260,22 @@
                         <constraints>
                             <constraint firstItem="uht-EO-RIj" firstAttribute="leading" secondItem="u9s-Jo-Aob" secondAttribute="leading" id="0XJ-Kb-eSc"/>
                             <constraint firstItem="rJ6-bQ-ZyV" firstAttribute="trailing" secondItem="u9s-Jo-Aob" secondAttribute="trailing" id="1La-fh-ekJ"/>
+                            <constraint firstItem="iBj-SX-myd" firstAttribute="top" secondItem="MdH-xh-hEy" secondAttribute="bottom" constant="18" id="2ag-9a-XGE"/>
                             <constraint firstItem="rJ6-bQ-ZyV" firstAttribute="top" secondItem="uht-EO-RIj" secondAttribute="bottom" constant="8" symbolic="YES" id="CGY-sP-hpx"/>
                             <constraint firstItem="Mjn-ES-b1a" firstAttribute="trailing" secondItem="bUT-8a-w7L" secondAttribute="trailing" constant="247" id="K39-Hw-Zfm"/>
                             <constraint firstItem="FVt-IF-Xhr" firstAttribute="leading" secondItem="Mjn-ES-b1a" secondAttribute="leading" constant="41" id="Kb7-WC-DBs"/>
                             <constraint firstItem="bUT-8a-w7L" firstAttribute="top" secondItem="FVt-IF-Xhr" secondAttribute="bottom" constant="30" id="LUi-BM-HUQ"/>
+                            <constraint firstItem="MdH-xh-hEy" firstAttribute="trailing" secondItem="rJ6-bQ-ZyV" secondAttribute="trailing" id="LpM-0K-bhn"/>
                             <constraint firstItem="Mjn-ES-b1a" firstAttribute="bottom" secondItem="iBj-SX-myd" secondAttribute="bottom" constant="157" id="QBM-6q-A0B"/>
                             <constraint firstItem="u9s-Jo-Aob" firstAttribute="leading" secondItem="bUT-8a-w7L" secondAttribute="leading" id="Rta-IU-PNc"/>
                             <constraint firstItem="FVt-IF-Xhr" firstAttribute="top" secondItem="Mjn-ES-b1a" secondAttribute="top" constant="77" id="iSn-60-JjU"/>
+                            <constraint firstItem="MdH-xh-hEy" firstAttribute="leading" secondItem="rJ6-bQ-ZyV" secondAttribute="leading" id="izA-d0-cmk"/>
+                            <constraint firstItem="9dL-T7-hp7" firstAttribute="leading" secondItem="MdH-xh-hEy" secondAttribute="leading" id="k7Y-a0-R8r"/>
                             <constraint firstItem="rJ6-bQ-ZyV" firstAttribute="leading" secondItem="uht-EO-RIj" secondAttribute="leading" id="l2L-Hz-uP4"/>
+                            <constraint firstItem="Mjn-ES-b1a" firstAttribute="trailing" secondItem="9dL-T7-hp7" secondAttribute="trailing" constant="184" id="lbR-HY-Lnc"/>
                             <constraint firstItem="FVt-IF-Xhr" firstAttribute="centerX" secondItem="D0c-tK-EQf" secondAttribute="centerX" id="mcS-Il-jMl"/>
                             <constraint firstItem="iBj-SX-myd" firstAttribute="leading" secondItem="Mjn-ES-b1a" secondAttribute="leading" constant="66" id="mer-yI-8XV"/>
+                            <constraint firstItem="MdH-xh-hEy" firstAttribute="top" secondItem="9dL-T7-hp7" secondAttribute="bottom" constant="8" symbolic="YES" id="rDZ-ZR-xpG"/>
                             <constraint firstItem="uht-EO-RIj" firstAttribute="top" secondItem="u9s-Jo-Aob" secondAttribute="bottom" constant="23" id="tPZ-bc-WCS"/>
                             <constraint firstItem="iBj-SX-myd" firstAttribute="centerX" secondItem="FVt-IF-Xhr" secondAttribute="centerX" id="tuo-EX-Ex2"/>
                             <constraint firstItem="bUT-8a-w7L" firstAttribute="leading" secondItem="Mjn-ES-b1a" secondAttribute="leading" constant="86" id="u4K-nA-CZP"/>
@@ -265,6 +286,7 @@
                     </view>
                     <connections>
                         <outlet property="dateField" destination="u9s-Jo-Aob" id="DSr-bo-DGa"/>
+                        <outlet property="diningField" destination="rJ6-bQ-ZyV" id="cky-wa-pAH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Iw-dL-HtM" userLabel="First Responder" sceneMemberID="firstResponder"/>
