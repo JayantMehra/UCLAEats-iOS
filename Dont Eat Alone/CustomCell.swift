@@ -14,13 +14,17 @@ class CustomCell: UITableViewCell {
     var name_cell: String?
     var descrip_cell: String?
     var image_cell: UIImage?
+//    let button = UIButton()
+//    button.frame = CGRectMake(100, 100, 100, 50)
+//    button.backgroundColor = UIColor.greenColor()
+//    button.setTitle("Button", forState: UIControlState.Normal)
+//    button.addTarget(self, action: "Action:", forControlEvents: UIControlEvents.TouchUpInside)
     
     var nameView : UILabel = {
         var textnameView = UILabel()
         textnameView.translatesAutoresizingMaskIntoConstraints = false
         return textnameView
     }()
-
 
     var descripView : UILabel = {
         var textView = UILabel()
@@ -34,8 +38,10 @@ class CustomCell: UITableViewCell {
         return imageView
     }()
     
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         
         self.addSubview(nameView)
         self.addSubview(descripView)
