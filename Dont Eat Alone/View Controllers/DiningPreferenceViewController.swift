@@ -13,9 +13,11 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
     
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var diningField: UITextField!
+    @IBOutlet weak var timeField: UITextField!
     
     
     let picker = UIDatePicker()
+    let timepicker = UIDatePicker()
     let dining_halls = ["Bruin Plate", "Covel Commons", "De Neve", "Feast", "Bruin Cafe", "Cafe 1919", "Rendezvous", "The Study at Hedrick", "No preference"]
     
     override func viewDidLoad() {
@@ -23,6 +25,7 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         let dinePick = UIPickerView()
         dinePick.delegate = self as? UIPickerViewDelegate
         diningField.inputView = dinePick
+        createTimePicker()
         createDataPicker()
         
         // Do any additional setup after loading the view.
@@ -45,6 +48,21 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         picker.minimumDate = Calendar.current.date(byAdding: components, to: Date())
     }
     
+    func createTimePicker() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        //done button for toolbar
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(timeDone))
+        toolbar.setItems([done], animated: false)
+        
+        timeField.inputAccessoryView = toolbar
+        timeField.inputView = timepicker
+        
+        timepicker.datePickerMode = .time
+        
+        
+    }
+    
 
     @objc func donePressed() {
         //format date
@@ -55,6 +73,15 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         
         dateField.text = "\(dateString)"
         //ADD THE DATE TO POTENTIAL MATCH STRUCTURE
+        self.view.endEditing(true)
+    }
+    
+    @objc func timeDone() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        let timeString = formatter.string(from: timepicker.date)
+        timeField.text = "\(timeString)"
         self.view.endEditing(true)
     }
 
