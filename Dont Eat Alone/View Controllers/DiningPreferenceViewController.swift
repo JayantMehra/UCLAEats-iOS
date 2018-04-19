@@ -18,21 +18,47 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
     
     let picker = UIDatePicker()
     let timepicker = UIDatePicker()
+    @objc let dinePick = UIPickerView()
     let dining_halls = ["Bruin Plate", "Covel Commons", "De Neve", "Feast", "Bruin Cafe", "Cafe 1919", "Rendezvous", "The Study at Hedrick", "No preference"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dinePick = UIPickerView()
-        dinePick.delegate = self as? UIPickerViewDelegate
+        
+        //PRE-FILLED DATE set to CURRENT DATE
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        let dateString = formatter.string(from: .init())
+        dateField.text = "\(dateString)"
+        
+        //PRE-FILLED DININGHALL BASED ON USER
+        // diningField = user.favoritedininghall
+        
+        //PRE-FILLED TIME
+        let formatter2 = DateFormatter()
+        formatter2.dateStyle = .none
+        formatter2.timeStyle = .short
+        let timeString = formatter2.string(from: .init(timeIntervalSinceNow: 900))
+        timeField.text = "\(timeString)"
+        
+        //Custom Dining Hall Picker
+        dinePick.delegate = self
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(getter: dinePick))
+        toolbar.setItems([done], animated: false)
+        diningField.inputAccessoryView = toolbar
         diningField.inputView = dinePick
+        
+        //Time and Date pickers
         createTimePicker()
-        createDataPicker()
+        createDatePicker()
         
         // Do any additional setup after loading the view.
     }
     
-
-    func createDataPicker() {
+    
+    func createDatePicker() {
         //toolbar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -57,9 +83,7 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         
         timeField.inputAccessoryView = toolbar
         timeField.inputView = timepicker
-        
         timepicker.datePickerMode = .time
-        
         
     }
     
@@ -73,6 +97,10 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         
         dateField.text = "\(dateString)"
         //ADD THE DATE TO POTENTIAL MATCH STRUCTURE
+        self.view.endEditing(true)
+    }
+    
+    @objc func dineDone() {
         self.view.endEditing(true)
     }
     
