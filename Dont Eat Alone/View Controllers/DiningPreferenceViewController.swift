@@ -18,7 +18,7 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
     
     let picker = UIDatePicker()
     let timepicker = UIDatePicker()
-    @objc let dinePick = UIPickerView()
+    let dinePick = UIPickerView()
     let dining_halls = ["Bruin Plate", "Covel Commons", "De Neve", "Feast", "Bruin Cafe", "Cafe 1919", "Rendezvous", "The Study at Hedrick", "No preference"]
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         dinePick.delegate = self
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(getter: dinePick))
+        let done = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dineDone))
         toolbar.setItems([done], animated: false)
         diningField.inputAccessoryView = toolbar
         diningField.inputView = dinePick
@@ -70,7 +70,7 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         dateField.inputView = picker
         //format picker for date
         picker.datePickerMode = .date
-        var components = DateComponents()
+        let components = DateComponents()
         picker.minimumDate = Calendar.current.date(byAdding: components, to: Date())
     }
     
@@ -86,7 +86,6 @@ class DiningPreferenceViewController: UIViewController, UIPickerViewDataSource, 
         timepicker.datePickerMode = .time
         
     }
-    
 
     @objc func donePressed() {
         //format date
